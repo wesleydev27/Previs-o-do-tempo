@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima App</title>
+    <!--CDN TAILWIND-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/scripts.js" defer></script>
+    <!--CDN FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="https://openweathermap.org/img/w/01d.png" type="image/x-icon">
+</head>
+
+<body
+    class="bg-[url('img/bk.jpg')] bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center overflow-hidden">
+    <!--CONTAINER-->
+    <section class="w-full max-w-md px-4 py-6">
+        <div class="flex flex-col bg-black opacity-80 rounded-lg py-8 px-6 w-full">
+            <h1 class="text-3xl sm:text-4xl font-bold mb-2 text-white text-center">Clima App</h1>
+            <p class="text-white text-center mb-4 text-sm sm:text-base">Pesquise o clima de uma cidade</p>
+
+            <!--INPUT AND BUTTON-->
+            <section class="flex gap-2 justify-center">
+                <input type="text" id="cidade" placeholder="Digite o nome da cidade"
+                    class="w-full max-w-[280px] p-2 rounded-lg bg-black opacity-90 text-white border border-white outline-none placeholder:text-gray-300">
+                <button class="w-12 bg-white rounded-lg opacity-90 hover:opacity-100 flex items-center justify-center"
+                    id="btnBuscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loading" class="text-white mt-4 hidden text-center">
+                <i class="fas fa-spinner fa-spin"></i>
+                Carregando...
+            </div>
+
+            <!-- Error Message -->
+            <div id="erro" class="text-red-500 mt-4 hidden text-center font-semibold"></div>
+
+            <!--WEATHER DETAILS-->
+            <section class="mt-4 text-center flex flex-col items-center">
+                <!--CITY-->
+                <p class="text-xl sm:text-2xl text-white mb-2 "><span id="cidade-nome"></span></p>
+
+                <!-- WEATHER-->
+                <p class="text-3xl sm:text-4xl text-white mb-2" id="clima"></p>
+
+                <!--STATUS-->
+                <!-- Dia ensolarado -->
+                <img src="https://openweathermap.org/img/w/01d.png" class="w-20 " alt="Icone do clima" id="icon">
+                <p class="text-xl sm:text-2xl text-white mb-2" id="status"></p>
+
+                <!--HUMIDITY-->
+                <p class="text-xl sm:text-2xl text-white" id="umidade"></p>
+            </section>
+        </div>
+    </section>
+</body>
+
+</html>
